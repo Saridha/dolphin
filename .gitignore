@@ -12,3 +12,4 @@ dist
 .scala_dependencies
 .target
 bin
+RUNNING_PID

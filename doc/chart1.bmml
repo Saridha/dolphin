@@ -1,0 +1,119 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1230" measuredH="686" mockupW="884" mockupH="657">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="346" y="29" w="884" h="657" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>esi.intelligence%0Ahttp%3A//esi.intelligence/dashboard</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::IconLabel" x="1109" y="110" w="-1" h="-1" measuredW="106" measuredH="32" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>UserIcon%7Cmedium</icon>
+        <labelPosition>left</labelPosition>
+        <text>Jack%20Reed%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::Label" x="361" y="116" w="276" h="41" measuredW="272" measuredH="41" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <bold>true</bold>
+        <color>0</color>
+        <size>32</size>
+        <text>Jack%27s%20Dashboard</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::IconLabel" x="637" y="124" w="-1" h="-1" measuredW="53" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <href>chart2%26bm%3Bchart2.bmml%26bm%3Bchart2.bmml%26bm%3Bchart2.bmml</href>
+        <icon>WriteIcon%7Csmall</icon>
+        <labelPosition>right</labelPosition>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22291%2C95%2C344%2C119%22%20href%3D%22chart2.bmml%22%20alt%3D%22chart2%22%20id%3D%2283%22/%3E</map>
+        <text>Edit</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::ColumnChart" x="371" y="203" w="243" h="175" measuredW="187" measuredH="175" zOrder="4" locked="false" isInGroup="-1"/>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::ColumnChart" x="690" y="203" w="240" h="175" measuredW="187" measuredH="175" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::PieChart" x="1017" y="200" w="-1" h="-1" measuredW="180" measuredH="180" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::Label" x="378" y="172" w="228" h="24" measuredW="202" measuredH="24" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>2012%20Capital%20Costs%20by%20Type</text>
+      </controlProperties>
+    </control>
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::Label" x="356" y="247" w="-1" h="-1" measuredW="17" measuredH="63" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>%24%20000%27s%20USD</text>
+        <textOrientation>up</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Label" x="696" y="172" w="228" h="24" measuredW="214" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>2012%20Capital%20Costs%20by%20Region</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::Label" x="991" y="172" w="228" h="24" measuredW="214" measuredH="24" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>2012%20Capital%20Costs%20by%20Region</text>
+      </controlProperties>
+    </control>
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::ColumnChart" x="372" y="438" w="243" h="175" measuredW="187" measuredH="175" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::ColumnChart" x="964" y="441" w="240" h="175" measuredW="187" measuredH="175" zOrder="12" locked="false" isInGroup="-1"/>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::PieChart" x="720" y="435" w="-1" h="-1" measuredW="180" measuredH="180" zOrder="13" locked="false" isInGroup="-1"/>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::Label" x="379" y="407" w="228" h="24" measuredW="202" measuredH="24" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>2012%20Capital%20Costs%20by%20Type</text>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::Label" x="357" y="482" w="-1" h="-1" measuredW="17" measuredH="63" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>%24%20000%27s%20USD</text>
+        <textOrientation>up</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::Label" x="970" y="410" w="228" h="24" measuredW="214" measuredH="24" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>2012%20Capital%20Costs%20by%20Region</text>
+      </controlProperties>
+    </control>
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::Label" x="694" y="407" w="228" h="24" measuredW="214" measuredH="24" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>16</size>
+        <text>2013%20Capital%20Costs%20by%20Region</text>
+      </controlProperties>
+    </control>
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::IconLabel" x="1028" y="114" w="-1" h="-1" measuredW="66" measuredH="24" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <href>alerts%26bm%3Balerts.bmml%26bm%3Balerts.bmml%26bm%3Balerts.bmml</href>
+        <icon>AlertIcon%7Csmall</icon>
+        <labelPosition>left</labelPosition>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22682%2C85%2C748%2C109%22%20href%3D%22alerts.bmml%22%20alt%3D%22alerts%22%20id%3D%22114%22/%3E</map>
+        <text>Alerts</text>
+      </controlProperties>
+    </control>
+    <control controlID="116" controlTypeID="com.balsamiq.mockups::HSlider" x="720" y="137" w="282" h="-1" measuredW="33" measuredH="11" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <value>27</value>
+      </controlProperties>
+    </control>
+    <control controlID="118" controlTypeID="com.balsamiq.mockups::Label" x="755" y="116" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Jan%2015%2C%202012</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,108 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1230" measuredH="686" mockupW="884" mockupH="657">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="346" y="29" w="884" h="657" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>esi.intelligence%0Ahttp%3A//esi.intelligence/alerts</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::IconLabel" x="1109" y="110" w="-1" h="-1" measuredW="106" measuredH="32" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>UserIcon%7Cmedium</icon>
+        <labelPosition>left</labelPosition>
+        <text>Jack%20Reed%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="__group__" x="361" y="166" w="511" h="117" measuredW="511" measuredH="117" zOrder="2" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::IconLabel" x="0" y="0" w="-1" h="-1" measuredW="430" measuredH="24" zOrder="0" locked="false" isInGroup="90">
+          <controlProperties>
+            <icon>Alert2Icon%7Csmall</icon>
+            <labelPosition>right</labelPosition>
+            <text>Jan%2018%2C%202012%3A%20Caliifornia%20has%20removed%20the%20Capital%20Type%20named%20%20%27G%26A%27</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::IconLabel" x="0" y="30" w="-1" h="-1" measuredW="487" measuredH="24" zOrder="1" locked="false" isInGroup="90">
+          <controlProperties>
+            <icon>AlertIcon%7Csmall</icon>
+            <labelPosition>right</labelPosition>
+            <text>Feb%206%2C%202012%3A%20Caliifornia%20has%20added%20a%20new%20Capital%20Type%20named%20%27Employee%20Costs%27</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Icon" x="435" y="0" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="2" locked="false" isInGroup="90">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <icon>ArchiveIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Icon" x="487" y="30" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="3" locked="false" isInGroup="90">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <icon>ArchiveIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::IconLabel" x="0" y="63" w="-1" h="-1" measuredW="377" measuredH="24" zOrder="4" locked="false" isInGroup="90">
+          <controlProperties>
+            <icon>AlertIcon%7Csmall</icon>
+            <labelPosition>right</labelPosition>
+            <text>Feb%206%2C%202012%3A%20Tunisia%20has%20added%20a%20new%20Product%20called%20%27Water%27</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="377" y="63" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="5" locked="false" isInGroup="90">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <icon>ArchiveIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::IconLabel" x="0" y="93" w="-1" h="-1" measuredW="433" measuredH="24" zOrder="6" locked="false" isInGroup="90">
+          <controlProperties>
+            <icon>Alert2Icon%7Csmall</icon>
+            <labelPosition>right</labelPosition>
+            <text>Mar%2027%2C%202012%3A%20North%20Sea%20has%20removed%20the%20Product%20named%20%20%27Heavy%20Oil%27</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::Icon" x="435" y="93" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="7" locked="false" isInGroup="90">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <icon>ArchiveIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Icon" x="465" y="0" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="8" locked="false" isInGroup="90">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <href>config%26bm%3Bconfig.bmml%26bm%3Bconfig.bmml%26bm%3Bconfig.bmml</href>
+            <icon>ChartColumnIcon%7Csmall</icon>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22480%2C137%2C504%2C161%22%20href%3D%22config.bmml%22%20alt%3D%22config%22%20id%3D%228%22/%3E</map>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Icon" x="465" y="93" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="9" locked="false" isInGroup="90">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <href>config%26bm%3Bconfig.bmml%26bm%3Bconfig.bmml%26bm%3Bconfig.bmml</href>
+            <icon>ChartColumnIcon%7Csmall</icon>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22480%2C230%2C504%2C254%22%20href%3D%22config.bmml%22%20alt%3D%22config%22%20id%3D%229%22/%3E</map>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::Label" x="361" y="116" w="276" h="41" measuredW="261" measuredH="41" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <bold>true</bold>
+        <color>0</color>
+        <size>32</size>
+        <text>Dashboard%20Alerts</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::IconLabel" x="637" y="124" w="-1" h="-1" measuredW="61" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <href>chart2%26bm%3Bchart2.bmml%26bm%3Bchart2.bmml%26bm%3Bchart2.bmml</href>
+        <icon>CheckMarkIcon%7Csmall</icon>
+        <labelPosition>right</labelPosition>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22291%2C95%2C352%2C119%22%20href%3D%22chart2.bmml%22%20alt%3D%22chart2%22%20id%3D%2292%22/%3E</map>
+        <text>Done</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

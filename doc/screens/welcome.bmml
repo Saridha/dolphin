@@ -1,0 +1,23 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1335" measuredH="761" mockupW="987" mockupH="739">
+  <controls>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Component" x="348" y="22" w="987" h="739" measuredW="987" measuredH="739" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/main.bmml</src>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="__group__" x="359" y="149" w="555" h="21" measuredW="555" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Link" x="421" y="0" w="-1" h="-1" measuredW="134" measuredH="21" zOrder="0" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>create%20your%20first%20chart.</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="425" measuredH="21" zOrder="1" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Welcome%20Andy%21%20I%20see%20you%20haven%27t%20created%20any%20charts%20yet.%20Go%20ahead%20and%20</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

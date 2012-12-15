@@ -6,4 +6,11 @@ Dolphin is both a business intelligence application and an integration platform.
 Dolphin will communicate with the esi.manage platform via its web services interface. It will consist of a rich web client, comminicating to the Dolphin REST services over HTTP. Dolphin will use the document-based MongoDB as its storage and persistant cache.
 ![alt text](https://raw.github.com/andyczerwonka/dolphin/master/doc/dolphin_architecture.png "Dolphin Architecture")
 
+### Technology Stack
+* [Angular.js](http://angularjs.org/)
+* [Require.js](http://requirejs.org/)
+* [Bootstrap](http://twitter.github.com/bootstrap/)
+* [Play Framework](http://www.playframework.org/)
+* [MongoDB](http://www.mongodb.org/)
+
 

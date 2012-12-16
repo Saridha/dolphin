@@ -9,6 +9,8 @@
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Link" x="421" y="0" w="-1" h="-1" measuredW="134" measuredH="21" zOrder="0" locked="false" isInGroup="13">
           <controlProperties>
+            <href>create_chart%26bm%3Bcreate_chart.bmml%26bm%3Bcreate_chart.bmml%26bm%3Bcreate_chart.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22432%2C127%2C566%2C148%22%20href%3D%22create_chart.bmml%22%20alt%3D%22create_chart%22%20id%3D%220%22/%3E</map>
             <text>create%20your%20first%20chart.</text>
           </controlProperties>
         </control>

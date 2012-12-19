@@ -2,8 +2,8 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                           controllers.Application.index
+# Bootstrap the AngularJS app
+GET     /                           controllers.Bootstrap.index
 
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+# Make sure we can access all the files in the AngularJS app
+GET     /*file                      controllers.Assets.at(path="/public/app", file)

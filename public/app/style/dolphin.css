@@ -1,0 +1,23 @@
+/* dolphin css overrides */
+
+/* override bootstraps brand and add logo */
+.navbar .brand {
+  display: block;
+  float: left;
+  padding: 10px 35px 10px;
+  margin-left: -35px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #777777;
+  text-shadow: 0 1px 0 #ffffff;
+  background: url(img/dolphin32.png) no-repeat left center;
+  height: 20px;
+}
+
+/* some hacky css to get the user image all the way to the right */
+.navbar .user {
+  float: right;
+  padding: 5px 0px 0px 5px;
+  margin-right: -35px;
+  height: 20px;
+}

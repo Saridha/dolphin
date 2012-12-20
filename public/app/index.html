@@ -1,20 +1,31 @@
 <!doctype html>
 <html lang="en" ng-app="dolphin">
 <head>
-  <meta charset="utf-8">
-  <title>Dolphin</title>
-  <link rel="stylesheet" href="style/app.css"/>
-  <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css"/>
+<meta charset="utf-8">
+<title>Dolphin</title>
+<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="style/dolphin.css" />
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+  <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="#/view1">Dolphin</a>
+        <ul class="nav">
+          <li><a href="#/view2">View 2</a></li>
+        </ul>
+        <ul class="nav user">
+          <li><img src="http://www.gravatar.com/avatar/3638a5defe12ecdb1e112c550e131d92?s=32&r=pg&d=mm" /></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div>
+    Angular seed app: v<span app-version></span>
+  </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>

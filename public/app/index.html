@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style/dolphin.css" />
 </head>
 <body>
-  <div class="navbar navbar-static-top">
+  <div class="navbar navbar-static-top" ng-controller="NavBarCtrl">
     <div class="navbar-inner">
       <div class="container-fluid">
         <a class="brand" href="#/home">Dolphin</a>
@@ -25,7 +25,7 @@
         <ul class="nav pull-right">
           <li>
             <button class="btn" type="button">
-              <i class="icon-bell"></i> Notifications
+              <i id="notify{{notity}}" class="icon-comment"></i> Notifications
             </button>
             <button class="btn" type="button">
               <i class="icon-folder-open"></i> Workspaces

@@ -2,6 +2,10 @@
 
 /* Controllers */
 
+function NavBarCtrl($scope) {
+	$scope.notity = true;
+}
+
 function MyCtrl1() {
 }
 MyCtrl1.$inject = [];

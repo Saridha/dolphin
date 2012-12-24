@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Declare app level module which depends on filters, directives, and services
 angular.module('dolphin', ['dolphin.filters', 'dolphin.services', 'dolphin.directives']).
   config(['$routeProvider', function($routeProvider) {

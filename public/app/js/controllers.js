@@ -2,12 +2,28 @@
 
 /* Controllers */
 
-function NavBarCtrl($scope) {
-	$scope.notify = true;
-	
-	$scope.toggleNotify = function() {
-		$scope.notify = !$scope.notify;
-	};
+function NavBarCtrl($scope, $http) {
+    $scope.notify = true;
+
+    $scope.toggleNotify = function() {
+        $scope.notify = !$scope.notify;
+    };
+
+    $scope.authenticate = function() {
+        $http.post("/login", {
+            "id" : "aczerwonka",
+            "email" : "andy.czerwonka@gmail.com"
+        }).success(function(data, status) {
+            $scope.status = status;
+            $scope.data = data;
+            $scope.result = data; // Show result from server in our
+                                    // <pre></pre> element
+        }).error(function(data, status) {
+            $scope.data = data || "Request failed";
+            $scope.status = status;
+        });
+    };
+
 }
 
 function MyCtrl1() {

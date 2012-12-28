@@ -2,8 +2,9 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Bootstrap the AngularJS app
-GET     /                           controllers.Bootstrap.index
+# Bootstrap the application
+GET    /                            controllers.Bootstrap.index
+GET    /*file                       controllers.Assets.at(path="/public/app", file)
 
-# Make sure we can access all the files in the AngularJS app
-GET     /*file                      controllers.Assets.at(path="/public/app", file)
+# Dolphin API
+POST   /login                       controllers.Authenticator.login

@@ -29,9 +29,10 @@ object Authenticator extends Controller {
     val id = (request.body \ "id").asOpt[String].get
     val email = (request.body \ "email").asOpt[String].get
     val key = sha1(email)
-    sessions = sessions + (key -> User(id, email))
+    synchronized {
+      sessions = sessions + (key -> User(id, email))
+    }
     Ok(s"Login for $id successful").withSession(session + ("DOLPHIN_SESSION" -> key))
   }
-
 
 }

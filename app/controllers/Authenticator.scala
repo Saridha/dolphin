@@ -26,13 +26,18 @@ object Authenticator extends Controller {
       hex(md.digest(str.getBytes("CP1252")))
     }
 
-    val id = (request.body \ "id").asOpt[String].get
-    val email = (request.body \ "email").asOpt[String].get
-    val key = sha1(email)
-    synchronized {
-      sessions = sessions + (key -> User(id, email))
+    val id = (request.body \ "id").asOpt[String]
+    val email = (request.body \ "email").asOpt[String]
+    (id, email) match {
+      case (Some(id), Some(email)) => {
+        val key = sha1(email)
+        synchronized {
+          sessions = sessions + (key -> User(id, email))
+        }
+        Ok(s"Login for $id successful").withSession("DOLPHIN_SESSION" -> key)
+      }
+      case _ => BadRequest("Invalid Request")
     }
-    Ok(s"Login for $id successful").withSession(session + ("DOLPHIN_SESSION" -> key))
   }
 
 }

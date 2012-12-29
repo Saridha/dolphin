@@ -16,8 +16,7 @@ function NavBarCtrl($scope, $http) {
         }).success(function(data, status) {
             $scope.status = status;
             $scope.data = data;
-            $scope.result = data; // Show result from server in our
-                                    // <pre></pre> element
+            $scope.result = data; 
         }).error(function(data, status) {
             $scope.data = data || "Request failed";
             $scope.status = status;

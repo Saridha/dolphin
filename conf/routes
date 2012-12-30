@@ -3,8 +3,8 @@
 # ~~~~
 
 # Bootstrap the application
-GET    /                            controllers.Bootstrap.index
-GET    /*file                       controllers.Assets.at(path="/public/app", file)
+GET    /                                controllers.Bootstrap.index
+GET    /*file                           controllers.Assets.at(path="/public/app", file)
 
 # Dolphin API
-POST   /login                       controllers.Authenticator.login
+POST   /api/login                       controllers.Authenticator.login

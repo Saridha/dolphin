@@ -3,25 +3,20 @@
 /* Controllers */
 
 function NavBarCtrl($scope, $http) {
-    $scope.notify = true;
 
-    $scope.toggleNotify = function() {
-        $scope.notify = !$scope.notify;
-    };
-
-    $scope.authenticate = function() {
-        $http.post("/login", {
-            "id" : "aczerwonka",
-            "email" : "andy.czerwonka@gmail.com"
-        }).success(function(data, status) {
-            $scope.status = status;
-            $scope.data = data;
-            $scope.result = data; 
-        }).error(function(data, status) {
-            $scope.data = data || "Request failed";
-            $scope.status = status;
-        });
-    };
+	$scope.authenticate = function() {
+		$http.post("/login", {
+			"id" : "aczerwonka",
+			"email" : "andy.czerwonka@gmail.com"
+		}).success(function(data, status) {
+			$scope.status = status;
+			$scope.data = data;
+			$scope.result = data;
+		}).error(function(data, status) {
+			$scope.data = data || "Request failed";
+			$scope.status = status;
+		});
+	};
 
 }
 

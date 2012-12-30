@@ -1,14 +1,15 @@
 package controllers
 
+import play.api.Play.current
+
 import play.api._
 import play.api.mvc._
 import java.io.File
+import play.api.cache.Cache
 
 object Authenticator extends Controller {
 
   case class User(id: String, email: String)
-
-  private[this] var sessions = Map.empty[String, User]
 
   def login = Action(parse.json) { implicit request =>
     def sha1(str: String): String = {
@@ -30,10 +31,9 @@ object Authenticator extends Controller {
     val email = (request.body \ "email").asOpt[String]
     (id, email) match {
       case (Some(id), Some(email)) => {
-        val key = sha1(email)
-        synchronized {
-          sessions = sessions + (key -> User(id, email))
-        }
+        val key = sha1(id)
+        val user = User(id, email)
+        Cache.set(key, user)
         Ok(s"Login for $id successful").withSession("DOLPHIN_SESSION" -> key)
       }
       case _ => BadRequest("Invalid Request")

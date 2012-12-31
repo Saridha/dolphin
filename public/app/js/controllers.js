@@ -2,34 +2,39 @@
 
 /* Controllers */
 
-function NavBarCtrl($scope, $http) {
+var NavigationCtrl = function($scope, $http) {
 
-  $scope.authenticate = function() {
-    $http.post("/api/login", {
-      "id" : "aczerwonka",
-      "email" : "andy.czerwonka@gmail.com"
-    }).success(function(data, status) {
-      $scope.status = status;
-      $scope.data = data;
-      $scope.result = data;
-    }).error(function(data, status) {
-      $scope.data = data || "Request failed";
-      $scope.status = status;
-    });
-  };
-  
-  $scope.showLogin = function() {
-    alert("clicked user");
-  };
+    $scope.authenticate = function() {
+        $http.post("/api/login", {
+            "id" : "aczerwonka",
+            "email" : "andy.czerwonka@gmail.com"
+        }).success(function(data, status) {
+            $scope.status = status;
+            $scope.data = data;
+            $scope.result = data;
+        }).error(function(data, status) {
+            $scope.data = data || "Request failed";
+            $scope.status = status;
+        });
+    };
 
-}
+    $scope.openLoginDialog = function() {
+        $scope.loginOpen = true;
+    };
 
-function HomeController() {
+    $scope.closeLoginDialog = function() {
+        $scope.loginOpen = false;
+    };
 
-}
-HomeController.$inject = [];
+};
+NavigationCtrl.$inject = [ '$scope', '$http' ];
 
-function HelpController() {
+var HomeCtrl = function($scope) {
 
-}
-HelpController.$inject = [];
+};
+HomeCtrl.$inject = [ '$scope' ];
+
+var HelpCtrl = function($scope) {
+
+};
+HelpCtrl.$inject = [ '$scope' ];

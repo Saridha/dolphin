@@ -35,13 +35,27 @@
         </ul>
       </div>
     </div>
-    <div modal="loginOpen" close="closeLoginDialog()">
+    <div modal="loginDialog" close="closeLoginDialog()">
       <div class="modal-header">
-        <h4>I'm a modal!</h4>
+        <h4>Login</h4>
       </div>
-      <div class="modal-body">with some content...</div>
+      <div class="modal-body form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="user">Username</label>
+          <div class="controls">
+            <input type="text" id="user" ng-model="user" placeholder="username">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="email">Email</label>
+          <div class="controls">
+            <input type="text" id="email" ng-model="email" placeholder="email">
+          </div>
+        </div>
+      </div>
       <div class="modal-footer">
         <button class="btn cancel" ng-click="closeLoginDialog()">Cancel</button>
+        <button class="btn btn-primary" ng-click="signin(user, email)">Sign In</button>
       </div>
     </div>
   </div>

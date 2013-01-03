@@ -4,26 +4,33 @@
 
 var NavigationCtrl = function($scope, $http) {
 
-    $scope.authenticate = function() {
+    $scope.authenticate = function(user, email) {
         $http.post("/api/login", {
-            "id" : "aczerwonka",
-            "email" : "andy.czerwonka@gmail.com"
+            "id" : user,
+            "email" : email
         }).success(function(data, status) {
             $scope.status = status;
             $scope.data = data;
             $scope.result = data;
+            console.log(data);
         }).error(function(data, status) {
             $scope.data = data || "Request failed";
             $scope.status = status;
+            console.log(data);
         });
     };
 
     $scope.openLoginDialog = function() {
-        $scope.loginOpen = true;
+        $scope.loginDialog = true;
     };
 
     $scope.closeLoginDialog = function() {
-        $scope.loginOpen = false;
+        $scope.loginDialog = false;
+    };
+    
+    $scope.signin = function(user, email) {
+        $scope.authenticate(user, email);
+        $scope.loginDialog = false;
     };
 
 };

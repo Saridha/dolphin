@@ -25,9 +25,9 @@
         <ul class="nav pull-right">
           <li>
             <button class="btn" type="button">
-              <i id="notify{{notify}}" class="icon-comment"></i> Notifications
+              <i class="icon-comment"></i> Notifications
             </button>
-            <button class="btn" type="button" ng-click="authenticate()">
+            <button class="btn" type="button" ng-click="logout()">
               <i class="icon-folder-open"></i> Portfolios
             </button>
           </li>
@@ -55,7 +55,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn cancel" ng-click="closeLoginDialog()">Cancel</button>
-        <button class="btn btn-primary" ng-click="authenticate()">Sign In</button>
+        <button class="btn btn-primary" ng-click="login()">Sign In</button>
       </div>
     </div>
   </div>

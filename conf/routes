@@ -8,6 +8,7 @@ GET    /                                controllers.Bootstrap.index
 # Dolphin API
 GET    /api/gravatar                    controllers.Authenticator.gravatar
 POST   /api/login                       controllers.Authenticator.login
+POST   /api/logout                      controllers.Authenticator.logout
 
 # static assets
 GET    /*file                           controllers.Assets.at(path="/public/app", file)

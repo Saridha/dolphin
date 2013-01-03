@@ -2,8 +2,8 @@
 
 /* Controllers */
 
-var NavigationCtrl = function($scope, $http) {
-
+var NavigationCtrl = function($scope, $http, $window) {
+    
     $scope.user = {};
 
     $scope.authenticate = function() {
@@ -12,6 +12,7 @@ var NavigationCtrl = function($scope, $http) {
             $scope.data = data;
             $scope.result = data;
             $scope.closeLoginDialog();
+            $window.location.reload();
             console.log(data);
         }).error(function(err, status) {
             $scope.status = status;
@@ -31,7 +32,7 @@ var NavigationCtrl = function($scope, $http) {
     };
     
 };
-NavigationCtrl.$inject = [ '$scope', '$http' ];
+NavigationCtrl.$inject = [ '$scope', '$http', '$window' ];
 
 var HomeCtrl = function($scope) {
 

@@ -40,4 +40,19 @@ object Authenticator extends Controller {
     }
   }
 
+  def gravatar = Action { implicit request =>
+    val genericImage = Ok.sendFile(content = new File("public/app/img/generic_user.png"), inline = true).as("image/png")
+    session.get("DOLPHIN_SESSION").map { key =>
+      Cache.get(key) match {
+        case (Some(user)) => {
+          println(s"Hi $user, I see you're already successfully authenticated.")
+          genericImage
+        }
+        case _ => genericImage
+      }
+    }.getOrElse {
+      genericImage
+    }
+  }
+
 }

@@ -4,7 +4,10 @@
 
 # Bootstrap the application
 GET    /                                controllers.Bootstrap.index
-GET    /*file                           controllers.Assets.at(path="/public/app", file)
 
 # Dolphin API
+GET    /api/gravatar                    controllers.Authenticator.gravatar
 POST   /api/login                       controllers.Authenticator.login
+
+# static assets
+GET    /*file                           controllers.Assets.at(path="/public/app", file)

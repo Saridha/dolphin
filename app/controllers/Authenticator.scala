@@ -36,7 +36,7 @@ object Authenticator extends Controller {
         Cache.set(key, user)
         Ok(s"Login for $id successful").withSession("DOLPHIN_SESSION" -> key)
       }
-      case _ => BadRequest("Invalid Request")
+      case _ => BadRequest("Login failed. A valid username and email is required.")
     }
   }
 

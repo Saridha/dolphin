@@ -4,23 +4,25 @@
 
 var NavigationCtrl = function($scope, $http) {
 
-    $scope.authenticate = function(user, email) {
-        $http.post("/api/login", {
-            "id" : user,
-            "email" : email
-        }).success(function(data, status) {
+    $scope.user = {};
+
+    $scope.authenticate = function() {
+        $http.post("/api/login", angular.toJson($scope.user)).success(function(data, status) {
             $scope.status = status;
             $scope.data = data;
             $scope.result = data;
+            $scope.closeLoginDialog();
             console.log(data);
-        }).error(function(data, status) {
-            $scope.data = data || "Request failed";
+        }).error(function(err, status) {
             $scope.status = status;
-            console.log(data);
+            $scope.data = undefined;
+            $scope.errorMsg = err;
+            console.log(err);
         });
     };
 
     $scope.openLoginDialog = function() {
+        $scope.errorMsg = undefined;
         $scope.loginDialog = true;
     };
 
@@ -28,11 +30,6 @@ var NavigationCtrl = function($scope, $http) {
         $scope.loginDialog = false;
     };
     
-    $scope.signin = function(user, email) {
-        $scope.authenticate(user, email);
-        $scope.loginDialog = false;
-    };
-
 };
 NavigationCtrl.$inject = [ '$scope', '$http' ];
 

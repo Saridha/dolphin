@@ -2,21 +2,18 @@
 
 /* Controllers */
 
-var NavigationCtrl = function($scope, $http, $window) {
+var NavigationCtrl = function($scope, $http, $window, userService) {
 
-    $scope.user = {};
-    
-    $scope.login = function() {
-        $http.post("/api/login", angular.toJson($scope.user)).success(function(data, status) {
+    $scope.user = userService.currentUser();
+
+    $scope.login = function(user) {
+        userService.login(user, function(data, status) {
             $scope.status = status;
-            $scope.data = data;
-            $scope.result = data;
             $scope.closeLoginDialog();
             $window.location.reload();
-        }).error(function(err, status) {
+        }, function(data, status) {
             $scope.status = status;
-            $scope.data = undefined;
-            $scope.errorMsg = err;
+            $scope.errorMsg = data;
         });
     };
 
@@ -35,6 +32,7 @@ var NavigationCtrl = function($scope, $http, $window) {
     };
 
     $scope.openLoginDialog = function() {
+        $scope.user = userService.currentUser();
         $scope.errorMsg = undefined;
         $scope.loginDialog = true;
     };
@@ -43,8 +41,12 @@ var NavigationCtrl = function($scope, $http, $window) {
         $scope.loginDialog = false;
     };
 
+    $scope.isLoggedIn = function() {
+        return userService.isLoggedIn();
+    };
+
 };
-NavigationCtrl.$inject = [ '$scope', '$http', '$window' ];
+NavigationCtrl.$inject = [ '$scope', '$http', '$window', 'userService' ];
 
 var HomeCtrl = function($scope) {
 

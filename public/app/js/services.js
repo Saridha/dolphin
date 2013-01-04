@@ -11,15 +11,11 @@ service.factory('userService', function($http) {
     var service = {};
     var currentUser = {};
 
-    var cacheCurrentUser = function() {
-        $http.get("/api/whoami").success(function(data, status) {
-            currentUser = data;
-        }).error(function(data, status) {
-            currentUser = {};
-        });
-    };
-
-    cacheCurrentUser();
+    $http.get("/api/whoami").success(function(data) {
+        currentUser = data;
+    }).error(function() {
+        currentUser = {};
+    });
 
     service.login = function(user, successFunction, errorFunction) {
         $http.post("/api/login", user).success(function(data, status, headers, config) {
@@ -40,6 +36,6 @@ service.factory('userService', function($http) {
     var isEmpty = function(obj) {
         return Object.keys(obj).length === 0;
     };
-    
+
     return service;
 });

@@ -7,7 +7,8 @@ import play.api.libs.ws.WS
 import java.io.File
 import play.api.cache.Cache
 import play.api.libs.concurrent.Execution.Implicits._
-import play.api.libs.iteratee.Enumerator
+import play.api.libs.json
+import play.api.libs.json._
 
 object Authenticator extends Controller {
 
@@ -47,6 +48,17 @@ object Authenticator extends Controller {
       Cache.getAs[User](key) match {
         case (Some(user)) => Ok.withNewSession.flashing("success" -> s"$user.id is now logged out.")
         case _ => Unauthorized
+      }
+    }.getOrElse {
+      Unauthorized
+    }
+  }
+
+  def whoami = Action { implicit request =>
+    session.get("DOLPHIN_SESSION").map { key =>
+      Cache.getAs[User](key) match {
+        case (Some(user)) => Ok(Json.obj("id" -> user.id, "email" -> user.email))
+        case None => Unauthorized
       }
     }.getOrElse {
       Unauthorized

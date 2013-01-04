@@ -5,7 +5,7 @@
 var NavigationCtrl = function($scope, $http, $window) {
 
     $scope.user = {};
-
+    
     $scope.login = function() {
         $http.post("/api/login", angular.toJson($scope.user)).success(function(data, status) {
             $scope.status = status;
@@ -13,12 +13,10 @@ var NavigationCtrl = function($scope, $http, $window) {
             $scope.result = data;
             $scope.closeLoginDialog();
             $window.location.reload();
-            console.log(data);
         }).error(function(err, status) {
             $scope.status = status;
             $scope.data = undefined;
             $scope.errorMsg = err;
-            console.log(err);
         });
     };
 
@@ -28,7 +26,6 @@ var NavigationCtrl = function($scope, $http, $window) {
             $scope.data = data;
             $scope.result = data;
             $window.location.reload();
-            console.log(data);
         }).error(function(err, status) {
             $scope.status = status;
             $scope.data = undefined;

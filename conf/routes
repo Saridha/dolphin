@@ -9,6 +9,7 @@ GET    /                                controllers.Bootstrap.index
 GET    /api/gravatar                    controllers.Authenticator.gravatar
 POST   /api/login                       controllers.Authenticator.login
 POST   /api/logout                      controllers.Authenticator.logout
+GET    /api/whoami                      controllers.Authenticator.whoami
 
 # static assets
 GET    /*file                           controllers.Assets.at(path="/public/app", file)

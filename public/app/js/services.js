@@ -22,7 +22,7 @@ service.factory('userService', [ '$http', function($http) {
   return {
     name : 'User Service',
 
-    login : function(user, onSuccess, onError) {
+    login : function(user) {
       return $http.post("/api/login", user);
     },
 

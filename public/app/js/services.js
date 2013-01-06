@@ -26,6 +26,10 @@ service.factory('userService', [ '$http', function($http) {
       return $http.post("/api/login", user);
     },
 
+    logout : function() {
+      return $http.post("/api/logout", {});
+    },
+
     currentUser : function() {
       return currentUser;
     },

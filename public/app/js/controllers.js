@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var NavigationCtrl = function($scope, $http, $window, userService) {
+var NavigationCtrl = function($scope, $window, userService) {
 
   $scope.user = userService.currentUser();
 
@@ -18,7 +18,7 @@ var NavigationCtrl = function($scope, $http, $window, userService) {
   };
 
   $scope.logout = function() {
-    $http.post("/api/logout", {}).success(function(data, status) {
+    userService.logout().success(function(data, status) {
       $scope.status = status;
       $scope.data = data;
       $scope.result = data;
@@ -46,7 +46,7 @@ var NavigationCtrl = function($scope, $http, $window, userService) {
   };
 
 };
-NavigationCtrl.$inject = [ '$scope', '$http', '$window', 'userService' ];
+NavigationCtrl.$inject = [ '$scope', '$window', 'userService' ];
 
 var HomeCtrl = function($scope) {
 

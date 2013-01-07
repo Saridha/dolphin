@@ -9,72 +9,9 @@
 <link rel="stylesheet" href="style/dolphin.css" />
 </head>
 <body>
-  <div class="navbar navbar-static-top" ng-controller="NavigationCtrl">
-    <div class="navbar-inner">
-      <div class="container-fluid">
-        <a class="brand" href="#/home">Dolphin</a>
-        <form class="navbar-search pull-left">
-          <input type="text" class="search-query" placeholder="Search">
-        </form>
-        <ul class="nav">
-          <li><a href="#/help"><i class="icon-question-sign"></i> Help</a></li>
-        </ul>
-        <ul class="nav user">
-          <li class="dropdown"><img role="button" class="dropdown-toggle" data-toggle="dropdown" src="/api/gravatar" />
-            <ul class="dropdown-menu pull-right" role="menu">
-              <li ng-show="!isLoggedIn()"><a ng-click="openLoginDialog()">Login</a></li>
-              <li ng-show="isLoggedIn()"><a href="#">Preferences</a></li>
-              <li ng-show="isLoggedIn()"><a ng-click="logout()">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="nav pull-right">
-          <li>
-            <button class="btn" type="button">
-              <i class="icon-comment"></i> Notifications
-            </button>
-            <button class="btn" type="button">
-              <i class="icon-folder-open"></i> Portfolios
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div modal="loginDialog" close="closeLoginDialog()">
-      <div class="modal-header">
-        <h4>Sign into Dolphin</h4>
-      </div>
-      <div class="modal-body form-horizontal">
-        <div class="control-group">
-          <label class="control-label" for="user">Username</label>
-          <div class="controls">
-            <input type="text" id="user" ng-model="user.id" required placeholder="username">
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label" for="email">Email</label>
-          <div class="controls">
-            <input type="email" id="email" ng-model="user.email" required placeholder="email@domain.com">
-          </div>
-        </div>
-        <p class="text-error" ng-show="errorMsg!=undefined;" style="text-align: center">{{errorMsg}}</p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn cancel" ng-click="closeLoginDialog()">Cancel</button>
-        <button class="btn btn-primary" ng-click="login(user)">Sign In</button>
-      </div>
-    </div>
-  </div>
-
+  <div ng-include="'/partials/navbar.html'"></div>
   <div ng-view></div>
 
-  <div>
-    Angular seed app: v<span app-version></span>
-  </div>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
-  -->
   <script src="lib/jquery-1.8.3.min.js"></script>
   <script src="style/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/angular/angular.js"></script>

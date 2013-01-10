@@ -37,7 +37,7 @@ object Authenticator extends Controller {
         val key = hash(id)
         val user = User(id, email)
         Cache.set(key, user)
-        Ok(s"Login for $id successful").withSession("DOLPHIN_SESSION" -> key)
+        Ok(Json.obj("id" -> user.id, "email" -> user.email)).withSession("DOLPHIN_SESSION" -> key)
       }
       case _ => BadRequest("Login failed. A valid username and email is required.")
     }

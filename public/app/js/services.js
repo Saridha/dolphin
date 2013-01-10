@@ -8,26 +8,27 @@ var service = angular.module('dolphin.services', []).value('version', '0.1');
 
 service.factory('userService', [ '$http', function($http) {
 
-  var isEmpty = function(obj) {
-    return Object.keys(obj).length === 0;
-  };
+  var currentUser = false;
 
-  var currentUser = {};
   $http.get("/api/whoami").success(function(data) {
     currentUser = data;
   }).error(function() {
-    currentUser = {};
+    currentUser = false;
   });
 
   return {
     name : 'User Service',
 
     login : function(user) {
-      return $http.post("/api/login", user);
+      return $http.post("/api/login", user).success(function(data) {
+        currentUser = data;
+      });
     },
 
     logout : function() {
-      return $http.post("/api/logout", {});
+      return $http.post("/api/logout", {}).success(function() {
+        currentUser = false;
+      });
     },
 
     currentUser : function() {
@@ -35,7 +36,7 @@ service.factory('userService', [ '$http', function($http) {
     },
 
     isLoggedIn : function() {
-      return !isEmpty(currentUser);
+      return currentUser != false;
     }
 
   };

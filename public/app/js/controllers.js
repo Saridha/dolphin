@@ -5,35 +5,30 @@
 var NavigationCtrl = function($scope, $window, userService) {
 
   $scope.user = userService.currentUser();
+  $scope.errorMsg = false;
 
   $scope.login = function(user) {
-    userService.login(user).success(function(data, status) {
-      $scope.status = status;
+    userService.login(user).success(function(data) {
+      console.log("Success from the controller");
       $scope.closeLoginDialog();
       $window.location.reload();
-    }).error(function(data, status) {
-      $scope.status = status;
+    }).error(function(data) {
       $scope.errorMsg = data;
     });
   };
 
   $scope.logout = function() {
-    userService.logout().success(function(data, status) {
-      $scope.status = status;
-      $scope.data = data;
-      $scope.result = data;
+    userService.logout().success(function() {
       $window.location.reload();
-    }).error(function(err, status) {
-      $scope.status = status;
-      $scope.data = undefined;
-      $scope.errorMsg = err;
-      console.log(err);
+    }).error(function(data) {
+      $scope.errorMsg = data;
+      console.log(data);
     });
   };
 
   $scope.openLoginDialog = function() {
     $scope.user = userService.currentUser();
-    $scope.errorMsg = undefined;
+    $scope.errorMsg = false;
     $scope.loginDialog = true;
   };
 

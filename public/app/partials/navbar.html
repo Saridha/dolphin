@@ -45,7 +45,7 @@
           <input type="email" id="email" ng-model="user.email" required placeholder="email@domain.com">
         </div>
       </div>
-      <p class="text-error" ng-show="errorMsg!=undefined;" style="text-align: center">{{errorMsg}}</p>
+      <p class="text-error" ng-show="errorMsg" style="text-align: center">{{errorMsg}}</p>
     </div>
     <div class="modal-footer">
       <button class="btn cancel" ng-click="closeLoginDialog()">Cancel</button>

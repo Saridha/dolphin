@@ -2,16 +2,14 @@
 
 /* Controllers */
 
-var NavigationCtrl = function($scope, $window, userService) {
+var NavigationCtrl = function($scope, userService) {
 
   $scope.user = userService.currentUser();
   $scope.errorMsg = false;
 
   $scope.login = function(user) {
     userService.login(user).success(function(data) {
-      console.log("Success from the controller");
       $scope.closeLoginDialog();
-      $window.location.reload();
     }).error(function(data) {
       $scope.errorMsg = data;
     });
@@ -19,7 +17,7 @@ var NavigationCtrl = function($scope, $window, userService) {
 
   $scope.logout = function() {
     userService.logout().success(function() {
-      $window.location.reload();
+      $scope.isLoggedIn = false;
     }).error(function(data) {
       $scope.errorMsg = data;
       console.log(data);
@@ -27,7 +25,6 @@ var NavigationCtrl = function($scope, $window, userService) {
   };
 
   $scope.openLoginDialog = function() {
-    $scope.user = userService.currentUser();
     $scope.errorMsg = false;
     $scope.loginDialog = true;
   };
@@ -36,12 +33,16 @@ var NavigationCtrl = function($scope, $window, userService) {
     $scope.loginDialog = false;
   };
 
-  $scope.isLoggedIn = function() {
-    return userService.isLoggedIn();
-  };
+  $scope.$watch(userService.isLoggedIn, function(loggedIn) {
+    console.log("Changed login status to", loggedIn);
+    if (loggedIn)
+      $scope.user = userService.currentUser();
+    else
+      $scope.user = false;
+  });
 
 };
-NavigationCtrl.$inject = [ '$scope', '$window', 'userService' ];
+NavigationCtrl.$inject = [ '$scope', 'userService' ];
 
 var HomeCtrl = function($scope) {
 

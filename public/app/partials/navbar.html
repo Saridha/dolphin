@@ -11,9 +11,9 @@
       <ul class="nav user">
         <li class="dropdown"><img role="button" class="dropdown-toggle" data-toggle="dropdown" ng-src="/api/gravatar" />
           <ul class="dropdown-menu pull-right" role="menu">
-            <li ng-show="!isLoggedIn()"><a ng-click="openLoginDialog()">Login</a></li>
-            <li ng-show="isLoggedIn()"><a href="#">Preferences</a></li>
-            <li ng-show="isLoggedIn()"><a ng-click="logout()">Logout</a></li>
+            <li ng-show="!user"><a ng-click="openLoginDialog()">Login</a></li>
+            <li ng-show="user"><a href="#">Preferences</a></li>
+            <li ng-show="user"><a ng-click="logout()">Logout</a></li>
           </ul></li>
       </ul>
       <ul class="nav pull-right">

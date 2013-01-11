@@ -4,9 +4,8 @@
 
 var NavigationCtrl = function($scope, userService) {
 
-  $scope.user = userService.currentUser();
-  $scope.avatarUrl = userService.avatarUrl();
   $scope.errorMsg = false;
+  $scope.user = userService.currentUser();
 
   $scope.login = function(user) {
     userService.login(user).success(function(data) {

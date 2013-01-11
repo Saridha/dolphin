@@ -6,7 +6,7 @@
 GET    /                                controllers.Bootstrap.index
 
 # Dolphin API
-GET    /api/gravatar                    controllers.Authenticator.gravatar
+GET    /api/avatar                      controllers.Authenticator.avatar
 POST   /api/login                       controllers.Authenticator.login
 POST   /api/logout                      controllers.Authenticator.logout
 GET    /api/whoami                      controllers.Authenticator.whoami

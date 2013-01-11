@@ -5,6 +5,7 @@
 var NavigationCtrl = function($scope, userService) {
 
   $scope.user = userService.currentUser();
+  $scope.avatarUrl = userService.avatarUrl();
   $scope.errorMsg = false;
 
   $scope.login = function(user) {
@@ -33,12 +34,13 @@ var NavigationCtrl = function($scope, userService) {
     $scope.loginDialog = false;
   };
 
-  $scope.$watch(userService.isLoggedIn, function(loggedIn) {
-    console.log("Changed login status to", loggedIn);
-    if (loggedIn)
-      $scope.user = userService.currentUser();
+  $scope.$watch(userService.currentUser, function(user) {
+    console.log("Current User:", user);
+    $scope.user = user;
+    if (user)
+      $scope.avatarUrl = userService.avatarUrl();
     else
-      $scope.user = false;
+      $scope.avatarUrl = "img/generic_user.png";
   });
 
 };

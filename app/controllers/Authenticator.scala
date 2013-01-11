@@ -9,6 +9,7 @@ import play.api.cache.Cache
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.json
 import play.api.libs.json._
+import views.html.defaultpages.unauthorized
 
 object Authenticator extends Controller {
 
@@ -65,23 +66,22 @@ object Authenticator extends Controller {
     }
   }
 
-  def gravatar = Action { implicit request =>
-    val genericImage = Ok.sendFile(content = new File("public/app/img/generic_user.png"), inline = true).as("image/png")
+  def avatar = Action { implicit request =>
     session.get("DOLPHIN_SESSION").map { key =>
       Cache.getAs[User](key) match {
         case (Some(user)) => {
           Async {
-            WS.url("http://www.gravatar.com/avatar/" + hash(user.email) + "?s=32&r=pg&d=mm").withTimeout(5000).get
+            WS.url("http://www.gravatar.com/avatar/" + hash(user.email) + "?s=32&r=pg&d=mm").withTimeout(3000).get
               .map(image => Ok(image.ahcResponse.getResponseBodyAsBytes()).as("image/jpeg"))
               .recover {
-                case error => genericImage
+                case error => NotFound
               }
           }
         }
-        case _ => genericImage
+        case _ => Unauthorized
       }
     }.getOrElse {
-      genericImage
+      Unauthorized
     }
   }
 

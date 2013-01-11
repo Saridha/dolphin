@@ -35,8 +35,8 @@ service.factory('userService', [ '$http', function($http) {
       return currentUser;
     },
 
-    isLoggedIn : function() {
-      return currentUser != false;
+    avatarUrl : function() {
+        return "/api/avatar";
     }
 
   };

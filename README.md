@@ -8,9 +8,10 @@ Dolphin will communicate with the esi.manage platform via its web services inter
 
 ### Technology Stack
 * [Angular.js](http://angularjs.org/)
-* [Require.js](http://requirejs.org/)
 * [Bootstrap](http://twitter.github.com/bootstrap/)
 * [Play Framework](http://www.playframework.org/)
+* [Akka](http://akka.io/)
+* [Memcached](http://memcached.org/)
 * [MongoDB](http://www.mongodb.org/)
 
 

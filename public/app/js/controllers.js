@@ -17,7 +17,7 @@ var NavigationCtrl = function($scope, userService) {
 
   $scope.logout = function() {
     userService.logout().success(function() {
-      $scope.isLoggedIn = false;
+      $scope.loggedIn = false;
     }).error(function(data) {
       $scope.errorMsg = data;
       console.log(data);
@@ -34,12 +34,15 @@ var NavigationCtrl = function($scope, userService) {
   };
 
   $scope.$watch(userService.currentUser, function(user) {
-    console.log("Current User:", user);
     $scope.user = user;
-    if (user)
+    if (user) {
       $scope.avatarUrl = userService.avatarUrl();
-    else
+      $scope.loggedIn = true;
+    }
+    else {
       $scope.avatarUrl = "img/generic_user.png";
+      $scope.loggedIn = false;
+    }
   });
 
 };

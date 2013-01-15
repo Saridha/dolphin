@@ -8,11 +8,13 @@ var NavigationCtrl = function($scope, userService) {
   $scope.user = userService.currentUser();
 
   $scope.login = function(user) {
-    userService.login(user).success(function(data) {
-      $scope.closeLoginDialog();
-    }).error(function(data) {
-      $scope.errorMsg = data;
-    });
+    if (user) {
+      userService.login(user).success(function(data) {
+        $scope.closeLoginDialog();
+      }).error(function(data) {
+        $scope.errorMsg = data;
+      });
+    }
   };
 
   $scope.logout = function() {
@@ -38,8 +40,7 @@ var NavigationCtrl = function($scope, userService) {
     if (user) {
       $scope.avatarUrl = userService.avatarUrl();
       $scope.loggedIn = true;
-    }
-    else {
+    } else {
       $scope.avatarUrl = "img/generic_user.png";
       $scope.loggedIn = false;
     }

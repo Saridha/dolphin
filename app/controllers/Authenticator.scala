@@ -34,9 +34,13 @@ object Authenticator extends Controller {
 
   def Authenticated[A](p: BodyParser[A])(f: AuthenticatedRequest[A] => Result) = {
     Action(p) { request =>
-      request.session.get("DOLPHIN_SESSION").flatMap(u => Cache.getAs[User](u)).map { user =>
+      request.session.get("DOLPHIN_SESSION").flatMap(key => Cache.getAs[User](key)).map { user =>
         f(AuthenticatedRequest(user, request))
-      }.getOrElse(Unauthorized)
+      }.getOrElse {
+        val msg = s"Unauthorized attemp on ${request.uri} from ${request.remoteAddress}."
+        Logger.warn(msg)
+        Unauthorized(msg)
+      }
     }
   }
 

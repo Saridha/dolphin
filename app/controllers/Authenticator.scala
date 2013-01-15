@@ -9,7 +9,6 @@ import play.api.cache.Cache
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.json
 import play.api.libs.json._
-import views.html.defaultpages.unauthorized
 
 object Authenticator extends Controller {
 
@@ -30,6 +29,23 @@ object Authenticator extends Controller {
     hex(md.digest(str.getBytes("CP1252")))
   }
 
+  case class AuthenticatedRequest[A](
+    val user: User, request: Request[A]) extends WrappedRequest(request)
+
+  def Authenticated[A](p: BodyParser[A])(f: AuthenticatedRequest[A] => Result) = {
+    Action(p) { request =>
+      request.session.get("DOLPHIN_SESSION").flatMap(u => Cache.getAs[User](u)).map { user =>
+        f(AuthenticatedRequest(user, request))
+      }.getOrElse(Unauthorized)
+    }
+  }
+
+  // Overloaded method to use the default body parser
+  import play.api.mvc.BodyParsers._
+  def Authenticated(f: AuthenticatedRequest[AnyContent] => Result): Action[AnyContent] = {
+    Authenticated(parse.anyContent)(f)
+  }
+
   def login = Action(parse.json) { implicit request =>
     val id = (request.body \ "id").asOpt[String]
     val email = (request.body \ "email").asOpt[String]
@@ -44,44 +60,21 @@ object Authenticator extends Controller {
     }
   }
 
-  def logout = Action { implicit request =>
-    session.get("DOLPHIN_SESSION").map { key =>
-      Cache.getAs[User](key) match {
-        case (Some(user)) => Ok.withNewSession.flashing("success" -> s"$user.id is now logged out.")
-        case _ => Unauthorized
-      }
-    }.getOrElse {
-      Unauthorized
-    }
+  def logout = Authenticated { implicit request =>
+    Ok.withNewSession.flashing("success" -> s"$request.user.id is now logged out.")
   }
 
-  def whoami = Action { implicit request =>
-    session.get("DOLPHIN_SESSION").map { key =>
-      Cache.getAs[User](key) match {
-        case (Some(user)) => Ok(Json.obj("id" -> user.id, "email" -> user.email))
-        case None => Unauthorized
-      }
-    }.getOrElse {
-      Unauthorized
-    }
+  def whoami = Authenticated { implicit request =>
+    Ok(Json.obj("id" -> request.user.id, "email" -> request.user.email))
   }
 
-  def avatar = Action { implicit request =>
-    session.get("DOLPHIN_SESSION").map { key =>
-      Cache.getAs[User](key) match {
-        case (Some(user)) => {
-          Async {
-            WS.url("http://www.gravatar.com/avatar/" + hash(user.email) + "?s=32&r=pg&d=mm").withTimeout(3000).get
-              .map(image => Ok(image.ahcResponse.getResponseBodyAsBytes()).as("image/jpeg"))
-              .recover {
-                case error => NotFound
-              }
-          }
+  def avatar = Authenticated { implicit request =>
+    Async {
+      WS.url("http://www.gravatar.com/avatar/" + hash(request.user.email) + "?s=32&r=pg&d=mm").withTimeout(3000).get
+        .map(image => Ok(image.ahcResponse.getResponseBodyAsBytes()).as("image/jpeg"))
+        .recover {
+          case error => NotFound
         }
-        case _ => Unauthorized
-      }
-    }.getOrElse {
-      Unauthorized
     }
   }
 

@@ -74,7 +74,7 @@ object Authenticator extends Controller {
 
   def avatar = Authenticated { implicit request =>
     Async {
-      WS.url("http://www.gravatar.com/avatar/" + hash(request.user.email) + "?s=32&r=pg&d=mm").withTimeout(3000).get
+      WS.url(s"http://www.gravatar.com/avatar/${hash(request.user.email)}?s=32&r=pg&d=mm").withTimeout(3000).get
         .map(image => Ok(image.ahcResponse.getResponseBodyAsBytes()).as("image/jpeg"))
         .recover {
           case error => NotFound
